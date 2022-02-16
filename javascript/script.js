@@ -38,12 +38,17 @@ function displayNews(response) {
     const imageUrl = 'urlToImage'
 
     // parse news data
-    let newsContent
     for (const article of articles) {
-        newsContent += `${article[title]} <br>`
-    }
+        const pTag = document.createElement('p')
+        const imgTag = document.createElement('img')
 
-    articleTag.innerHTML = newsContent
+        pTag.innerHTML = article[title]
+        imgTag.src = article[imageUrl]
+        imgTag.classList.add('image')
+
+        articleTag.append(pTag)
+        articleTag.append(imgTag)
+    }
 }
 
 fetchNews()
