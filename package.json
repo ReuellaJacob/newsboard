@@ -1,0 +1,7 @@
+{
+  "name": "newsboard",
+  "version": "1.0.0",
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
