@@ -1,5 +1,6 @@
 function fetchNews() {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`;
+    const apiKey = ''
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`
     let request = new XMLHttpRequest()
     request.addEventListener("load", responseReceivedHandler)
     request.responseType = "json"
@@ -10,16 +11,14 @@ function fetchNews() {
 function responseReceivedHandler() {
     console.log(this.status);
     if (this.status === 200) {
-        document.querySelector(".test").innerHTML = this.response
         displayNews(this.response["articles"])
-
     }
 }
 
 function displayNews(articles) {
-    for (let i = 0; i < articles; i++) {
-        console.log(articles[i]);
-        articles[i]["title"]
+    console.log(articles);
+    for (let i = 0; i < articles.length; i++) {
+        document.querySelector(".test").innerHTML += articles[i]["title"] + "<br>";
     }
 }
 
