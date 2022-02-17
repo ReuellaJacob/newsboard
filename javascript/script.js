@@ -1,5 +1,5 @@
 function fetchNews() {
-    const apiKey = '6ceb3e705a004d81b3e940276efefd61'
+    const apiKey = ''
     const url = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`
     let request = new XMLHttpRequest()
     request.addEventListener("load", responseReceivedHandler)
